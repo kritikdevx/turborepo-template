@@ -1,0 +1,29 @@
+{
+  "name": "repo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "db:migrate": "turbo run db:migrate:deploy generate",
+    "db:studio": "turbo run db:studio",
+    "generate": "turbo run generate",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
+    "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=@repo/web",
+    "dev:admin": "turbo dev --filter=@repo/admin",
+    "dev:email": "turbo dev --filter=@repo/email",
+    "lint": "turbo lint",
+    "format": "biome format --write .",
+    "typecheck": "turbo typecheck"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "turbo": "^2.1.2",
+    "typescript": "^5.4.5",
+    "@t3-oss/env-nextjs": "^0.11.1"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "engines": {
+    "node": ">=18"
+  }
+}
